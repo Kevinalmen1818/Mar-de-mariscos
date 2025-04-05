@@ -204,6 +204,23 @@ def menu_usuarios():
                 print("1. Pagar con tarjeta")
                 print("2. Pagar en efectivo")
                 input("Seleccione una opción para continuar...")
+                metodo_pago = input("seleccione una opción de pago: ")
+                   if metodo_pago =="1":
+                      print("\nPago realizado con tarjeta. ¡Gracias por su compra!")
+                   elif metodo_pago =="2":
+                      try:
+                          efectivo = int(input("\nIngrese la cantidad en efectivo que va a entregar: "))
+                          if efectivo < total:
+                              print("\nPago insuficiente. Falta", total - efectivo, "colones")
+                          elif efectivo == total:
+                              print("\nPago exacto recibido. ¡Gracias por su compra!")
+                          else:
+                              Vuelto = efectivo - total
+                              print(f"\nPago recibido. Su vuelto es: {vuelto} colones. ¡Gracias por su compra!")
+                      except ValueError:
+                          print("\nCantidad no válida. Intente de nuevo")
+                   else:
+                       print("\nOpcion de pago no válidad")
             elif opcion == 5:
                 break
             else:
